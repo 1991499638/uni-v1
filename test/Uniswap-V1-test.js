@@ -65,6 +65,7 @@ describe("Exchange", function (){
         const sendEth = ethers.parseEther("10");
         const minTokensToReceive = (sendEth * tokenReserveBefore) / (sendEth + ethReserveBefore) * BigInt(99) / BigInt(100) 
         // console.log(ethers.formatEther(minTokensToReceive));
+        
 
         await exchange.connect(user2).ethToTokenSwap(0, { value: sendEth })
         await token.connect(user2).approve(exchange.target, ethers.parseEther("10"));
